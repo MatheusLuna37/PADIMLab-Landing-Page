@@ -30,16 +30,70 @@
     </script>
     <!-- Heroicons -->
     <script src="https://unpkg.com/heroicons@2.0.16/dist/heroicons.min.js"></script>
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
       html { scroll-behavior: smooth; }
       .text-gradient {
-        background: linear-gradient(90deg, #F33F44 0%, #fff 100%);
+        background: linear-gradient(90deg, #FFD600 0%, #fff 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
       .bg-gradient-to-r {
         background-image: linear-gradient(to right, #F33F44, #F1965C);
+      }
+      .swiper {
+        width: 100%;
+        padding: 20px 50px;
+        position: relative;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #F6BA19;
+        width: 40px;
+        height: 40px;
+      }
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 20px;
+      }
+      .swiper-pagination {
+        position: relative;
+        bottom: auto;
+        margin-top: 20px;
+      }
+      .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        margin: 0 6px;
+        background-color: white;
+      }
+      .swiper-pagination-bullet-active {
+        background: #F6BA19;
+      }
+      /* Ajustes específicos para cada seção */
+      .coordinationSwiper .swiper-slide,
+      .studentsSwiper .swiper-slide {
+        height: auto;
+      }
+      .projectsSwiper .swiper-slide {
+        height: auto;
+        width: 100%;
+      }
+      .projectsSwiper .swiper-slide > div {
+        height: 100%;
+      }
+      @media (min-width: 768px) {
+        .projectsSwiper .swiper-slide {
+          width: calc((100% - 30px) / 2);
+        }
+      }
+      @media (min-width: 1024px) {
+        .projectsSwiper .swiper-slide {
+          width: calc((100% - 60px) / 3);
+        }
       }
     </style>
   </head>
@@ -48,7 +102,7 @@
     <nav class="fixed top-0 left-0 w-full z-50 bg-padimdark/70 backdrop-blur-md border-b border-padimgray/20">
       <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <div class="flex items-center gap-3">
-          <img src="./assets/images/IMG_0945.png" alt="Logo PADIMLab" class="w-auto h-10 shadow" />
+          <img src="./assets/images/IMG_0953.png" alt="Logo PADIMLab" class="w-auto h-10 shadow" />
         </div>
         <!-- Desktop Menu -->
         <ul class="hidden md:flex gap-6 text-padimgray font-semibold text-sm justify-center flex-1">
@@ -59,7 +113,7 @@
           <li><a href="#contato" class="hover:text-padimyellow transition" data-i18n="menu_contato">Contato</a></li>
         </ul>
         <div class="hidden md:flex items-center gap-2 ml-4">
-          <button id="lang-pt" class="px-2 py-1 rounded text-xs font-semibold text-padimwhite bg-padimyellow/80 hover:bg-padimyellow transition" aria-label="Português">PT</button>
+          <button id="lang-pt" class="px-2 py-1 rounded text-xs font-semibold text-padimwhite bg-padimgray/40 hover:bg-padimyellow transition" aria-label="Português">PT</button>
           <button id="lang-en" class="px-2 py-1 rounded text-xs font-semibold text-padimwhite bg-padimgray/40 hover:bg-padimyellow transition" aria-label="English">EN</button>
         </div>
         <!-- Mobile Hamburger -->
@@ -89,15 +143,15 @@
     <!-- Hero Section -->
     <section id="hero" class="pt-32 pb-16 bg-padimdark flex flex-col items-center justify-center text-center fade-section">
   <img src="./assets/images/IMG_0945.png" alt="Logo PADIMLab" class="mx-auto mb-8 shadow-lg w-auto h-12 md:h-14 lg:h-20" />
-      <h1 class="font-belleza text-3xl md:text-4xl lg:text-5xl text-white max-w-4xl mx-auto px-4 md:px-0" data-i18n="hero_title">
-        <span class="!text-padimred font-bold">Lab</span><span class="text-gradient">oratório de </span><span class="!text-padimred font-bold">P</span><span class="text-gradient">ráticas </span><span class="!text-padimred font-bold">A</span><span class="text-gradient">vançadas em </span><span class="!text-padimred font-bold">D</span><span class="text-gradient">esenvolvimento, </span><span class="!text-padimred font-bold">I</span><span class="text-gradient">novação e </span><span class="!text-padimred font-bold">M</span><span class="text-gradient">etodologias</span>
+      <h1 class="font-belleza text-3xl md:text-4xl lg:text-5xl text-white mb-4 max-w-4xl mx-auto px-4 md:px-0" data-i18n="hero_title">
+        Laboratório de Práticas Avançadas em Desenvolvimento, Inovação e Metodologias para Engenhara de Sistemas.
       </h1>
-      <p class="text-padimgray text-lg md:text-2xl lg:text-3xl max-w-2xl mx-auto mb-8 font-belleza tracking-wide mt-2" data-i18n="hero_sub">para Engenharia de Sistemas</p>
+      <!--<p class="text-padimgray text-lg md:text-2xl lg:text-3xl max-w-2xl mx-auto mb-8 font-belleza tracking-wide mt-2" data-i18n="hero_sub">para Engenharia de Sistemas</p>-->
       <div class="flex flex-col md:flex-row gap-4 justify-center items-center w-full max-w-2xl mx-auto px-4 md:px-0">
         <a href="#projetos" class="group w-full md:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold text-white shadow transition text-sm md:text-base flex items-center justify-center bg-gradient-to-r from-padimred to-padimorange hover:from-padimred hover:to-padimorange capitalize" data-i18n="hero_btn_projetos">
           Conheça Nossos Projetos <span class="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
         </a>
-        <a href="#contato" class="group w-full md:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold border-2 border-padimred text-padimred bg-transparent shadow transition text-sm md:text-base flex items-center justify-center hover:bg-padimred hover:text-white capitalize" data-i18n="hero_btn_contato">
+        <a href="#contato" class="group w-full md:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold border-2 border-padimorange text-padimorange bg-transparent shadow transition text-sm md:text-base flex items-center justify-center hover:bg-padimorange hover:text-white capitalize" data-i18n="hero_btn_contato">
           Fale Conosco
         </a>
       </div>
@@ -121,65 +175,100 @@
         <h2 class="font-belleza text-3xl md:text-4xl text-padimyellow mb-10 text-center" data-i18n="time_titulo">Nosso Time</h2>
         <div class="mb-8">
           <h3 class="font-belleza text-xl text-padimorange mb-4" data-i18n="time_coord">Coordenação</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="swiper coordinationSwiper">
+            <div class="swiper-wrapper">
             <!-- Card Coordenação -->
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Abraham Baker.jpg" alt="Coordenador" class="rounded-full mb-4 border-4 border-padimyellow" />
-              <span class="font-belleza text-lg text-padimwhite">Nome Coordenador</span>
-              <span class="text-padimgray text-sm">Coordenador</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/coordenadores/allysson.jpg" alt="Coordenador" class="rounded-full mb-5 border-4 border-padimyellow w-48 h-48 md:w-64 md:h-64 object-cover aspect-square" />
+                <span class="font-belleza text-xl md:text-2xl text-padimwhite text-center">Allysson Alex</span>
+                <span class="text-padimgray text-base md:text-lg">Coordenador</span>
+              </div>
             </div>
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Adriana O'Sullivan.jpg" alt="Coordenador" class="rounded-full mb-4 border-4 border-padimyellow" />
-              <span class="font-belleza text-lg text-padimwhite">Nome Coordenador 2</span>
-              <span class="text-padimgray text-sm">Coordenador</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/coordenadores/dorgival.jpg" alt="Coordenador" class="rounded-full mb-5 border-4 border-padimyellow w-48 h-48 md:w-64 md:h-64 object-cover aspect-square" />
+                <span class="font-belleza text-xl md:text-2xl text-padimwhite text-center">Dorgival Netto</span>
+                <span class="text-padimgray text-base md:text-lg">Coordenador</span>
+              </div>
             </div>
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Amelie Bennett.jpg" alt="Coordenador" class="rounded-full mb-4 border-4 border-padimyellow" />
-              <span class="font-belleza text-lg text-padimwhite">Nome Coordenador 3</span>
-              <span class="text-padimgray text-sm">Coordenador</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/coordenadores/paola.jpg" alt="Coordenador" class="rounded-full mb-5 border-4 border-padimyellow w-48 h-48 md:w-64 md:h-64 object-cover aspect-square" />
+                <span class="font-belleza text-xl md:text-2xl text-padimwhite text-center">Paola Rodrigues</span>
+                <span class="text-padimgray text-base md:text-lg">Coordenador</span>
+              </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
         <div>
           <h3 class="font-belleza text-xl text-padimorange mb-4" data-i18n="time_discentes">Discentes</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          <div class="swiper studentsSwiper">
+            <div class="swiper-wrapper">
             <!-- Card Discente -->
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Ammar Foley.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange" />
-              <span class="font-belleza text-base text-padimwhite">Nome Discente</span>
-              <span class="text-padimgray text-xs">Discente</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/discentes/antonio-nunes.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
+                <span class="font-belleza text-base text-padimwhite">Antônio Nunes</span>
+                <span class="text-padimgray text-xs">Discente</span>
+              </div>
             </div>
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Alec Whitten.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange" />
-              <span class="font-belleza text-base text-padimwhite">Nome Discente 2</span>
-              <span class="text-padimgray text-xs">Discente</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/discentes/jose-vitor.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
+                <span class="font-belleza text-base text-padimwhite">José Vitor</span>
+                <span class="text-padimgray text-xs">Discente</span>
+              </div>
             </div>
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Genevieve Mclean.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange" />
-              <span class="font-belleza text-base text-padimwhite">Nome Discente 3</span>
-              <span class="text-padimgray text-xs">Discente</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/discentes/matheus-bezerra.jpeg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
+                <span class="font-belleza text-base text-padimwhite">Matheus Bezerra</span>
+                <span class="text-padimgray text-xs">Discente</span>
+              </div>
             </div>
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Lana Steiner.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange" />
-              <span class="font-belleza text-base text-padimwhite">Nome Discente 4</span>
-              <span class="text-padimgray text-xs">Discente</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/discentes/miguel-morais.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
+                <span class="font-belleza text-base text-padimwhite">Miguel Morais</span>
+                <span class="text-padimgray text-xs">Discente</span>
+              </div>
             </div>
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Fergus Gray.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange" />
-              <span class="font-belleza text-base text-padimwhite">Nome Discente 5</span>
-              <span class="text-padimgray text-xs">Discente</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/discentes/antonio-nunes.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
+                <span class="font-belleza text-base text-padimwhite">Antônio Nunes</span>
+                <span class="text-padimgray text-xs">Discente</span>
+              </div>
             </div>
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Ethan Valdez.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange" />
-              <span class="font-belleza text-base text-padimwhite">Nome Discente 6</span>
-              <span class="text-padimgray text-xs">Discente</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/discentes/jose-vitor.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
+                <span class="font-belleza text-base text-padimwhite">José Vitor</span>
+                <span class="text-padimgray text-xs">Discente</span>
+              </div>
             </div>
-            <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <img src="./assets/images/people/Youssef Roberson.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange" />
-              <span class="font-belleza text-base text-padimwhite">Nome Discente 7</span>
-              <span class="text-padimgray text-xs">Discente</span>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/discentes/matheus-bezerra.jpeg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
+                <span class="font-belleza text-base text-padimwhite">Matheus Bezerra</span>
+                <span class="text-padimgray text-xs">Discente</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/discentes/miguel-morais.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
+                <span class="font-belleza text-base text-padimwhite">Miguel Morais</span>
+                <span class="text-padimgray text-xs">Discente</span>
+              </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </section>
 
@@ -225,53 +314,72 @@
       <!-- Nossos Projetos -->
       <section id="projetos" class="max-w-7xl mx-auto px-6 py-20 fade-section">
         <h2 class="font-belleza text-3xl md:text-4xl text-padimyellow mb-10 text-center" data-i18n="projetos_titulo">Nossos Projetos</h2>
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="swiper projectsSwiper">
+          <div class="swiper-wrapper">
           <!-- Card Projeto 1 -->
-          <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
-            <img src="https://placehold.co/160x160/F6BA19/181820?text=Inovação" alt="Projeto 1" class="object-cover w-40 h-full min-h-[160px]" />
-            <div class="p-6 flex-1 flex flex-col justify-center">
-              <h4 class="font-belleza text-lg text-padimyellow mb-2" data-i18n="projeto1_titulo">Projeto 1</h4>
-              <p class="text-padimgray" data-i18n="projeto1_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+          <div class="swiper-slide">
+            <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
+              <img src="https://placehold.co/160x160/F6BA19/181820?text=Inovação" alt="Projeto 1" class="object-cover w-40 h-full min-h-[160px]" />
+              <div class="p-6 flex-1 flex flex-col justify-center">
+                <h4 class="font-belleza text-lg text-padimyellow mb-2" data-i18n="projeto1_titulo">Projeto 1</h4>
+                <p class="text-padimgray" data-i18n="projeto1_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+              </div>
             </div>
           </div>
           <!-- Card Projeto 2 -->
-          <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
-            <img src="https://placehold.co/160x160/F1965C/181820?text=Tecnologia" alt="Projeto 2" class="object-cover w-40 h-full min-h-[160px]" />
-            <div class="p-6 flex-1 flex flex-col justify-center">
-              <h4 class="font-belleza text-lg text-padimorange mb-2" data-i18n="projeto2_titulo">Projeto 2</h4>
-              <p class="text-padimgray" data-i18n="projeto2_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+          <div class="swiper-slide">
+            <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
+              <img src="https://placehold.co/160x160/F1965C/181820?text=Tecnologia" alt="Projeto 2" class="object-cover w-40 h-full min-h-[160px]" />
+              <div class="p-6 flex-1 flex flex-col justify-center">
+                <h4 class="font-belleza text-lg text-padimorange mb-2" data-i18n="projeto2_titulo">Projeto 2</h4>
+                <p class="text-padimgray" data-i18n="projeto2_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+              </div>
             </div>
           </div>
           <!-- Card Projeto 3 -->
-          <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
-            <img src="https://placehold.co/160x160/F33F44/181820?text=Impacto+Social" alt="Projeto 3" class="object-cover w-40 h-full min-h-[160px]" />
-            <div class="p-6 flex-1 flex flex-col justify-center">
-              <h4 class="font-belleza text-lg text-padimred mb-2" data-i18n="projeto3_titulo">Projeto 3</h4>
-              <p class="text-padimgray" data-i18n="projeto3_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+          <div class="swiper-slide">
+            <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
+              <img src="https://placehold.co/160x160/F33F44/181820?text=Impacto+Social" alt="Projeto 3" class="object-cover w-40 h-full min-h-[160px]" />
+              <div class="p-6 flex-1 flex flex-col justify-center">
+                <h4 class="font-belleza text-lg text-padimred mb-2" data-i18n="projeto3_titulo">Projeto 3</h4>
+                <p class="text-padimgray" data-i18n="projeto3_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+              </div>
             </div>
           </div>
           <!-- Card Projeto 4 -->
-          <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
-            <img src="https://placehold.co/160x160/181820/F6BA19?text=Pesquisa" alt="Projeto 4" class="object-cover w-40 h-full min-h-[160px]" />
-            <div class="p-6 flex-1 flex flex-col justify-center">
-              <h4 class="font-belleza text-lg text-padimyellow mb-2" data-i18n="projeto4_titulo">Projeto 4</h4>
-              <p class="text-padimgray" data-i18n="projeto4_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+          <div class="swiper-slide">
+            <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
+              <img src="https://placehold.co/160x160/181820/F6BA19?text=Pesquisa" alt="Projeto 4" class="object-cover w-40 h-full min-h-[160px]" />
+              <div class="p-6 flex-1 flex flex-col justify-center">
+                <h4 class="font-belleza text-lg text-padimyellow mb-2" data-i18n="projeto4_titulo">Projeto 4</h4>
+                <p class="text-padimgray" data-i18n="projeto4_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+              </div>
             </div>
           </div>
           <!-- Card Projeto 5 -->
-          <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
-            <img src="https://placehold.co/160x160/181820/F1965C?text=Desenvolvimento" alt="Projeto 5" class="object-cover w-40 h-full min-h-[160px]" />
-            <div class="p-6 flex-1 flex flex-col justify-center">
-              <h4 class="font-belleza text-lg text-padimorange mb-2" data-i18n="projeto5_titulo">Projeto 5</h4>
-              <p class="text-padimgray" data-i18n="projeto5_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+          <div class="swiper-slide">
+            <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
+              <img src="https://placehold.co/160x160/181820/F1965C?text=Desenvolvimento" alt="Projeto 5" class="object-cover w-40 h-full min-h-[160px]" />
+              <div class="p-6 flex-1 flex flex-col justify-center">
+                <h4 class="font-belleza text-lg text-padimorange mb-2" data-i18n="projeto5_titulo">Projeto 5</h4>
+                <p class="text-padimgray" data-i18n="projeto5_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+            </div>
             </div>
           </div>
           <!-- Card Projeto 6 -->
-          <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
-            <img src="https://placehold.co/160x160/181820/F33F44?text=Qualidade" alt="Projeto 6" class="object-cover w-40 h-full min-h-[160px]" />
-            <div class="p-6 flex-1 flex flex-col justify-center">
-              <h4 class="font-belleza text-lg text-padimred mb-2" data-i18n="projeto6_titulo">Projeto 6</h4>
-              <p class="text-padimgray" data-i18n="projeto6_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+          <div class="swiper-slide">
+            <div class="bg-padimdark border border-padimgray/20 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-row items-stretch min-h-[160px]">
+              <img src="https://placehold.co/160x160/181820/F33F44?text=Qualidade" alt="Projeto 6" class="object-cover w-40 h-full min-h-[160px]" />
+              <div class="p-6 flex-1 flex flex-col justify-center">
+                <h4 class="font-belleza text-lg text-padimred mb-2" data-i18n="projeto6_titulo">Projeto 6</h4>
+                <p class="text-padimgray" data-i18n="projeto6_desc">Breve descrição do projeto. Edite conforme necessário.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
             </div>
           </div>
         </div>
@@ -328,7 +436,7 @@
             menu_pesquisa: 'Linhas de Pesquisa',
             menu_projetos: 'Projetos',
             menu_contato: 'Contato',
-            hero_title: "<span class='!text-padimred font-bold'>Lab</span><span class='text-gradient'>oratório de </span><span class='!text-padimred font-bold'>P</span><span class='text-gradient'>ráticas </span><span class='!text-padimred font-bold'>A</span><span class='text-gradient'>vançadas em </span><span class='!text-padimred font-bold'>D</span><span class='text-gradient'>esenvolvimento, </span><span class='!text-padimred font-bold'>I</span><span class='text-gradient'>novação e </span><span class='!text-padimred font-bold'>M</span><span class='text-gradient'>etodologias</span>",
+            hero_title: "Laboratório de Práticas Avançadas em Desenvolvimento, Inovação e Metodologias para Engenharia de Sistemas",
             hero_sub: "para Engenharia de Sistemas",
             quem_titulo: 'Quem Somos',
             quem_texto1: 'Somos o PADIMLab, um laboratório dedicado à pesquisa, inovação e desenvolvimento de soluções tecnológicas de impacto social. Nossa missão é promover conhecimento, qualidade e confiança em cada projeto.',
@@ -375,7 +483,7 @@
             menu_pesquisa: 'Research Lines',
             menu_projetos: 'Projects',
             menu_contato: 'Contact',
-            hero_title: "<span class='!text-padimred font-bold'>Lab</span><span class='text-gradient'>oratory of </span><span class='!text-padimred font-bold'>A</span><span class='text-gradient'>dvanced </span><span class='!text-padimred font-bold'>P</span><span class='text-gradient'>ractices in </span><span class='!text-padimred font-bold'>D</span><span class='text-gradient'>evelopment, </span><span class='!text-padimred font-bold'>I</span><span class='text-gradient'>nnovation and </span><span class='!text-padimred font-bold'>M</span><span class='text-gradient'>ethodologies</span>",
+            hero_title: "Laboratary of Advanced Practices in Development, Innovation and Methodologies for Systems Engineering",
             hero_sub: "for Systems Engineering",
             quem_titulo: 'About Us',
             quem_texto1: 'We are PADIMLab, a laboratory dedicated to research, innovation and the development of technological solutions with social impact. Our mission is to promote knowledge, quality and trust in every project.',
@@ -462,6 +570,87 @@
         });
         // Default language
         setLang('pt');
+      });
+
+      // Initialize Swipers
+      document.addEventListener('DOMContentLoaded', function() {
+        // Coordination Swiper
+        const coordinationSwiper = new Swiper('.coordinationSwiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          autoHeight: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            }
+          }
+        });
+
+        // Students Swiper
+        const studentsSwiper = new Swiper('.studentsSwiper', {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: true,
+          autoHeight: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            480: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 4,
+            }
+          }
+        });
+
+        // Projects Swiper
+        const projectsSwiper = new Swiper('.projectsSwiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          autoHeight: true,
+          centeredSlides: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+              centeredSlides: false,
+            },
+            1024: {
+              slidesPerView: 3,
+              centeredSlides: false,
+            }
+          }
+        });
       });
     </script>
   </body>
