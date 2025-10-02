@@ -76,7 +76,7 @@
       /* Ajustes específicos para cada seção */
       .coordinationSwiper .swiper-slide,
       .studentsSwiper .swiper-slide {
-        height: auto;
+        height: 100%;
       }
       .projectsSwiper .swiper-slide {
         height: auto;
@@ -159,7 +159,7 @@
 
     <main class="pt-4">
       <!-- Quem Somos -->
-      <section id="quem-somos" class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12 fade-section">
+      <section id="quem-somos" class="max-w-7xl mx-auto px-6 py-10 lg:py-20 flex flex-col md:flex-row items-center gap-12 fade-section">
         <div class="flex-1">
           <h2 class="font-belleza text-3xl md:text-4xl text-padimyellow mb-4" data-i18n="quem_titulo">Quem Somos</h2>
           <p class="text-lg text-padimwhite mb-4" data-i18n="quem_texto1">Somos o PADIMLab, um laboratório dedicado à pesquisa, inovação e desenvolvimento de soluções tecnológicas de impacto social. Nossa missão é promover conhecimento, qualidade e confiança em cada projeto.</p>
@@ -171,7 +171,7 @@
       </section>
 
       <!-- Nosso Time -->
-      <section id="time" class="max-w-7xl mx-auto px-6 py-20 fade-section">
+      <section id="time" class="max-w-7xl mx-auto px-6 py-10 lg:py-20 fade-section">
         <h2 class="font-belleza text-3xl md:text-4xl text-padimyellow mb-10 text-center" data-i18n="time_titulo">Nosso Time</h2>
         <div class="mb-8">
           <h3 class="font-belleza text-xl text-padimorange mb-4" data-i18n="time_coord">Coordenação</h3>
@@ -179,22 +179,22 @@
             <div class="swiper-wrapper">
             <!-- Card Coordenação -->
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
-                <img src="./assets/images/coordenadores/allysson.jpg" alt="Coordenador" class="rounded-full mb-5 border-4 border-padimyellow w-48 h-48 md:w-64 md:h-64 object-cover aspect-square" />
+              <div class="bg-padimdark h-full border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/coordenadores/allysson.jpg" alt="Coordenador" class="rounded-full mb-2 border-4 max-h-[250px] border-padimyellow object-cover aspect-square" />
                 <span class="font-belleza text-xl md:text-2xl text-padimwhite text-center">Allysson Alex</span>
                 <span class="text-padimgray text-base md:text-lg">Coordenador</span>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
-                <img src="./assets/images/coordenadores/dorgival.jpg" alt="Coordenador" class="rounded-full mb-5 border-4 border-padimyellow w-48 h-48 md:w-64 md:h-64 object-cover aspect-square" />
+              <div class="bg-padimdark h-full border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/coordenadores/dorgival.jpg" alt="Coordenador" class="rounded-full mb-2 border-4 max-h-[250px] border-padimyellow object-cover aspect-square" />
                 <span class="font-belleza text-xl md:text-2xl text-padimwhite text-center">Dorgival Netto</span>
                 <span class="text-padimgray text-base md:text-lg">Coordenador</span>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
-                <img src="./assets/images/coordenadores/paola.jpg" alt="Coordenador" class="rounded-full mb-5 border-4 border-padimyellow w-48 h-48 md:w-64 md:h-64 object-cover aspect-square" />
+              <div class="bg-padimdark h-full border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <img src="./assets/images/coordenadores/paola.jpg" alt="Coordenador" class="rounded-full mb-2 border-4 max-h-[250px] border-padimyellow object-cover aspect-square" />
                 <span class="font-belleza text-xl md:text-2xl text-padimwhite text-center">Paola Rodrigues</span>
                 <span class="text-padimgray text-base md:text-lg">Coordenador</span>
               </div>
@@ -210,58 +210,58 @@
             <div class="swiper-wrapper">
             <!-- Card Discente -->
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <img src="./assets/images/discentes/antonio-nunes.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
-                <span class="font-belleza text-base text-padimwhite">Antônio Nunes</span>
+                <span class="font-belleza text-center text-base text-padimwhite">Antônio Nunes</span>
                 <span class="text-padimgray text-xs">Discente</span>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <img src="./assets/images/discentes/jose-vitor.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
-                <span class="font-belleza text-base text-padimwhite">José Vitor</span>
+                <span class="font-belleza text-center text-base text-padimwhite">José Vitor</span>
                 <span class="text-padimgray text-xs">Discente</span>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <img src="./assets/images/discentes/matheus-bezerra.jpeg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
-                <span class="font-belleza text-base text-padimwhite">Matheus Bezerra</span>
+                <span class="font-belleza text-center text-base text-padimwhite">Matheus Bezerra</span>
                 <span class="text-padimgray text-xs">Discente</span>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <img src="./assets/images/discentes/miguel-morais.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
-                <span class="font-belleza text-base text-padimwhite">Miguel Morais</span>
+                <span class="font-belleza text-center text-base text-padimwhite">Miguel Morais</span>
                 <span class="text-padimgray text-xs">Discente</span>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <img src="./assets/images/discentes/antonio-nunes.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
-                <span class="font-belleza text-base text-padimwhite">Antônio Nunes</span>
+                <span class="font-belleza text-center text-base text-padimwhite">Antônio Nunes</span>
                 <span class="text-padimgray text-xs">Discente</span>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <img src="./assets/images/discentes/jose-vitor.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
-                <span class="font-belleza text-base text-padimwhite">José Vitor</span>
+                <span class="font-belleza text-center text-base text-padimwhite">José Vitor</span>
                 <span class="text-padimgray text-xs">Discente</span>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <img src="./assets/images/discentes/matheus-bezerra.jpeg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
-                <span class="font-belleza text-base text-padimwhite">Matheus Bezerra</span>
+                <span class="font-belleza text-center text-base text-padimwhite">Matheus Bezerra</span>
                 <span class="text-padimgray text-xs">Discente</span>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-4 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <div class="bg-padimdark border border-padimgray/20 rounded-lg p-6 md:p-8 flex flex-col items-center shadow hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <img src="./assets/images/discentes/miguel-morais.jpg" alt="Discente" class="rounded-full mb-2 border-2 border-padimorange aspect-square object-cover" />
-                <span class="font-belleza text-base text-padimwhite">Miguel Morais</span>
+                <span class="font-belleza text-center text-base text-padimwhite">Miguel Morais</span>
                 <span class="text-padimgray text-xs">Discente</span>
               </div>
             </div>
@@ -273,7 +273,7 @@
       </section>
 
       <!-- Linhas de Pesquisa -->
-      <section id="pesquisa" class="max-w-7xl mx-auto px-6 py-20 fade-section">
+      <section id="pesquisa" class="max-w-7xl mx-auto px-6 py-10 lg:py-20 fade-section">
         <h2 class="font-belleza text-3xl md:text-4xl text-padimyellow mb-10 text-center" data-i18n="pesquisa_titulo">Linhas de Pesquisa</h2>
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-padimdark border-l-4 border-padimyellow p-6 rounded-lg shadow hover:shadow-lg transition-all duration-300">
@@ -312,7 +312,7 @@
       </section>
 
       <!-- Nossos Projetos -->
-      <section id="projetos" class="max-w-7xl mx-auto px-6 py-20 fade-section">
+      <section id="projetos" class="max-w-7xl mx-auto px-6 py-10 lg:py-10 lg:py-20 fade-section">
         <h2 class="font-belleza text-3xl md:text-4xl text-padimyellow mb-10 text-center" data-i18n="projetos_titulo">Nossos Projetos</h2>
         <div class="swiper projectsSwiper">
           <div class="swiper-wrapper">
@@ -386,7 +386,7 @@
       </section>
 
       <!-- Contato -->
-      <section id="contato" class="max-w-7xl mx-auto px-6 py-20 fade-section">
+      <section id="contato" class="max-w-7xl mx-auto px-6  lg:py-20 fade-section">
         <h2 class="font-belleza text-3xl md:text-4xl text-padimyellow mb-8 text-center" data-i18n="contato_titulo">Contato</h2>
         <div class="flex flex-col items-center gap-4">
           <div class="flex items-center gap-2">
